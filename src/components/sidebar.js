@@ -19,7 +19,7 @@ const TitlesSection = () => (
   </div>
 );
 const SideBar = () => {
-  const [globalTab, setGlobalTab] = useState(0);
+  const [tab, setTab] = useState(0);
 
   return (
     <div className="flex h-full">
