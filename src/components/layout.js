@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
-import SideBar from './sidebar';
+import SideBar from './Sidebar';
 
 const Layout = ({ children }) => (
   <div className="flex min-h-screen antialiased">
