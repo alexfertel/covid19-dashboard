@@ -9,6 +9,7 @@
   "plugins": ["react", "prettier"],
   "env": { "browser": true, "jest": true },
   "rules": {
+    "no-unused-vars": "warn",
     "max-len": [
       "error",
       {
