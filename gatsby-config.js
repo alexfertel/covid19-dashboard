@@ -1,3 +1,9 @@
+/* eslint-disable global-require */
+const resolveConfig = require("tailwindcss/resolveConfig");
+const tailwindConfig = require("./tailwind.config.js");
+
+const fullConfig = resolveConfig(tailwindConfig);
+
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
@@ -6,9 +12,19 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`)(tailwindConfig),
+          require(`autoprefixer`),
+          ...(process.env.NODE_ENV === `production` ? [require(`cssnano`)] : []),
+        ],
+      },
+    },
     'gatsby-plugin-eslint',
     {
-      resolve: 'gatsby-gatsby-plugin-prettier-eslint-eslint',
+      resolve: 'gatsby-plugin-prettier-eslint',
       options: {
         prettier: {
           patterns: [
@@ -36,6 +52,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        background_color: fullConfig.theme.colors.white,
       },
     },
     `gatsby-transformer-sharp`,
@@ -56,4 +73,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

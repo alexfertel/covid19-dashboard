@@ -2,19 +2,18 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="w-full h-64 p-20 text-gray-900">
+      <h3 className="w-full text-5xl font-quicksand">Quicksand</h3>
+      <p className="w-full mt-4 text-gray-800 font-nunito">This is some nunito text, used for regular text</p>
+      <Link to="/page-2/" className="text-red-600 underline hover:text-red-400">
+        Go to page 2
+      </Link>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 );
 
