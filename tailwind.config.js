@@ -21,8 +21,8 @@ module.exports = {
       cool: {
         1: '#FFFFFF',
         2: '#FFF2E6',
-        3: '#904C6E',
-        4: '#F0C7A7',
+        3: '#F0C7A7',
+        4: '#904C6E',
         5: '#3D3E67',
       },
 
@@ -157,6 +157,7 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      '80': '20rem'
     },
     backgroundColor: theme => theme('colors'),
     backgroundOpacity: theme => theme('opacity'),
