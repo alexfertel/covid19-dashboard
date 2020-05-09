@@ -6,10 +6,10 @@ import SideBar from './Sidebar';
 
 const Layout = ({ children }) => (
   <div className="flex min-h-screen antialiased">
-    <nav className="w-80">
+    <nav className="w-112">
       <SideBar />
     </nav>
-    <main className="bg-white">
+    <main className="w-full -ml-8 overflow-hidden bg-white shadow-xl rounded-2xl">
       <Header />
       {children}
     </main>

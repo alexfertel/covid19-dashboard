@@ -157,7 +157,9 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
-      '80': '20rem'
+      '80': '20rem',
+      '96': '24rem',
+      '112': '28rem'
     },
     backgroundColor: theme => theme('colors'),
     backgroundOpacity: theme => theme('opacity'),
@@ -188,6 +190,8 @@ module.exports = {
       default: '0.25rem',
       md: '0.375rem',
       lg: '0.5rem',
+      xl: '1rem',
+      '2xl': '2rem',
       full: '9999px',
     },
     borderWidth: {
