@@ -29,7 +29,7 @@ const getSizeClasses = size => getClasses(size, sizesClasses, defaultSizeClasses
 const Button = props => {
   const { variant = 'contained', size = 'medium', children, onClick = () => {}, type = 'button', classes = '' } = props;
   const baseClasses =
-    'rounded-lg inline-block items-center justify-between font-semibold focus:outline-none focus:shadow-outline';
+    'rounded-2xl inline-block items-center justify-between font-semibold focus:outline-none focus:shadow-outline';
 
   const className =
     classes || [baseClasses, getVariantClasses(variant), getSizeClasses(size), getHoverClasses(variant)].join(' ');
