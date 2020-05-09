@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
-import Footer from './Footer';
+import SideBar from './sidebar';
 
 const Layout = ({ children }) => (
-  <div className="antialiased min-h-screen">
-    <Header />
-    <main>{children}</main>
-    <Footer />
+  <div className="flex min-h-screen antialiased">
+    <nav className="w-80">
+      <SideBar />
+    </nav>
+    <main className="bg-white">
+      <Header />
+      {children}
+    </main>
+    {/* <Footer /> */}
   </div>
 );
 
