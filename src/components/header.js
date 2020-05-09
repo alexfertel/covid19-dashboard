@@ -28,9 +28,14 @@ const GitHubIcon = withHeaderClasses(({ className = 'w-5 h-5' }) => (
 
 const Header = () => (
   <header className="flex justify-between w-full px-5 py-4 text-gray-600 bg-transparent lg:px-8">
-    <Link to="/">
-      <Logo className="w-5 h-5" />
-    </Link>
+    <div className="flex justify-between">
+      <Link to="/">
+        <Logo className="w-5 h-5" />
+      </Link>
+      <Link to="/components" className="ml-4 text-gray-600">
+        Components
+      </Link>
+    </div>
 
     <a href="https://github.com/Daher91/covid19-dashboard" rel="noopener noreferrer" target="_blank">
       <GitHubIcon />
