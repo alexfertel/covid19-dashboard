@@ -6,7 +6,7 @@ import SEO from '../components/Seo';
 
 const IndexPage = ({ pageContext }) => (
   <Layout>
-    {console.log('contextInfo', pageContext)}
+    {/* {console.log('contextInfo', pageContext)} */}
     <SEO title="Home" />
     <div className="w-full h-64 p-20 text-gray-900">
       <h3 className="w-full text-5xl font-quicksand">Quicksand</h3>
