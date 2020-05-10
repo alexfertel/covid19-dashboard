@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Layout from '../components/layout';
-import Button from '../global/button';
+import Layout from '../components/Layout';
+import Button from '../global/Button';
 
 const ComponentsPage = () => {
   const rows = ['contained', 'outlined', 'text', 'inverted'];

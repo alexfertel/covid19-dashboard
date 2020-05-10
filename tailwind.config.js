@@ -26,6 +26,16 @@ module.exports = {
         5: '#3D3E67',
       },
 
+      material: {
+        1:'#CFD8DC',
+        2: '#F50057',
+        3: '#ECEFF1',
+        4: '#B0BEC5',
+        5: '#CFD8DC',
+        6: '#119DA4', 
+        7: '#0A1826'
+      },
+
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -157,7 +167,9 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
-      '80': '20rem'
+      '80': '20rem',
+      '96': '24rem',
+      '112': '28rem'
     },
     backgroundColor: theme => theme('colors'),
     backgroundOpacity: theme => theme('opacity'),
@@ -188,6 +200,8 @@ module.exports = {
       default: '0.25rem',
       md: '0.375rem',
       lg: '0.5rem',
+      xl: '1rem',
+      '2xl': '2rem',
       full: '9999px',
     },
     borderWidth: {
