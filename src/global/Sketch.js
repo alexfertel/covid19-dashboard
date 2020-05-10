@@ -8,9 +8,7 @@ const Sketch = ({ setup, draw }) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    console.log(ref.current)
     new p5(p => {
-      console.log(p);
       p.setup = () => setup(p);
       p.draw = () => draw(p);
     }, ref.current);

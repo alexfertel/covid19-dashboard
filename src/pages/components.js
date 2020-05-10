@@ -21,8 +21,10 @@ const ComponentsPage = () => {
           </div>
         ))}
       </div>
-      <div className="flex items-center justify-between">
-        <LineGraph />
+      <div className="flex items-center justify-center">
+        <div className="p-2 border-2 border-gray-300">
+          <LineGraph xs={[0, 400]} ys={[0, 200]} />
+        </div>
       </div>
     </Layout>
   );
