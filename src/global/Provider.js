@@ -7,7 +7,7 @@ const Provider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://covid19cubadata.github.io/data/covid19-cuba.json?_=1589076786848`)
+    fetch(`https://covid19cubadata.github.io/data/covid19-cuba.json`)
       .then(response => response.json())
       .then(resultData => {
         setSharedState(resultData);
