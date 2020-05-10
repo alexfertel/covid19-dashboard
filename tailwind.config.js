@@ -26,6 +26,16 @@ module.exports = {
         5: '#3D3E67',
       },
 
+      material: {
+        1:'#CFD8DC',
+        2: '#F50057',
+        3: '#ECEFF1',
+        4: '#B0BEC5',
+        5: '#CFD8DC',
+        6: '#119DA4', 
+        7: '#0A1826'
+      },
+
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
