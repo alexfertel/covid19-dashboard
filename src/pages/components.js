@@ -2,6 +2,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import Button from '../global/Button';
+import LineGraph from '../global/LineGraph';
 
 const ComponentsPage = () => {
   const rows = ['contained', 'outlined', 'text', 'inverted'];
@@ -9,7 +10,7 @@ const ComponentsPage = () => {
 
   return (
     <Layout>
-      <div className="w-full h-64 p-20 space-y-3 text-gray-900">
+      <div className="w-full p-20 space-y-3 text-gray-900">
         {rows.map(row => (
           <div className="space-x-5 font-nunito" key={row}>
             {columns.map(col => (
@@ -19,6 +20,11 @@ const ComponentsPage = () => {
             ))}
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center">
+        <div className="p-2 border-2 border-gray-300">
+          <LineGraph xs={[0, 400]} ys={[0, 200]} />
+        </div>
       </div>
     </Layout>
   );
