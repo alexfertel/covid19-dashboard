@@ -3,20 +3,20 @@ import React from 'react';
 import { variants, sizes, createClasses, getClasses } from './utils';
 
 const variantClasses = [
-  createClasses(variants.outlined, 'text-blue-800 bg-gray-100 border-2 border-blue-800'),
-  createClasses(variants.text, 'text-blue-800'),
-  createClasses(variants.inverted, 'text-blue-600 bg-blue-200'),
+  createClasses(variants.outlined, 'text-purple-500 bg-gray-100 border-2 border-purple-500'),
+  createClasses(variants.text, 'text-purple-500'),
+  createClasses(variants.inverted, 'text-purple-600 bg-purple-200'),
 ];
-const defaultVariantClass = 'text-gray-100 bg-blue-800';
+const defaultVariantClass = 'text-gray-100 bg-purple-600';
 
 const getVariantClasses = variant => getClasses(variant, variantClasses, defaultVariantClass);
 
 const hoverClasses = [
-  createClasses(variants.outlined, 'hover:text-gray-100 hover:bg-blue-600 hover:border-transparent'),
-  createClasses(variants.text, 'hover:bg-blue-100'),
-  createClasses(variants.inverted, 'hover:text-blue-500 hover:bg-blue-100'),
+  createClasses(variants.outlined, 'hover:text-gray-100 hover:bg-purple-500 hover:border-transparent'),
+  createClasses(variants.text, 'hover:bg-purple-100 hover:text-purple-600'),
+  createClasses(variants.inverted, 'hover:bg-purple-100'),
 ];
-const defaultVariantHover = 'hover:bg-blue-600';
+const defaultVariantHover = 'hover:bg-purple-400';
 
 const getHoverClasses = variant => getClasses(variant, hoverClasses, defaultVariantHover);
 

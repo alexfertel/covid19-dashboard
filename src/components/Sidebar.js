@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 import { LogoIcon, DashboardIcon, GitHubIcon, WorldIcon } from '../global/icons';
 
 const IconsSection = () => (
-  <div className="flex flex-col w-32 bg-gray-400 shadow-md rounded-2xl text-cool-2">
+  <div className="flex flex-col w-32 bg-white shadow-md rounded-2xl text-cool-2">
     <div className="flex flex-col items-center h-full px-4 py-4 mr-12 justify-evenly">
       <Link to="/">
-        <LogoIcon className="w-8 h-8 text-material-2" />
+        <LogoIcon className="w-8 h-8 text-purple-600" />
       </Link>
       <div className="flex items-center justify-center h-full text-gray-800">
         <span className="flex items-center justify-center w-10 h-10 rounded-lg opacity-75 cursor-pointer hover:bg-gray-500 hover:text-gray-900">
