@@ -8,7 +8,7 @@ import Typography from '../global/Typography';
 const ComponentsPage = () => {
   return (
     <Layout>
-      <div className="overflow-auto p-10 h-full">
+      <div className="h-full p-10 overflow-auto">
         <ButtonSection />
         <GraphSection />
         <TypographySection />
@@ -46,7 +46,7 @@ const ButtonSection = () => {
 
 const GraphSection = () => (
   <Section title="Graphs">
-    <div className="flex  justify-center">
+    <div className="flex justify-center">
       <div className="p-2 border-2 border-gray-300">
         <LineGraph xs={[0, 400]} ys={[0, 200]} />
       </div>

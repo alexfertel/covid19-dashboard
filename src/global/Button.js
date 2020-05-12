@@ -1,6 +1,19 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { variants, sizes, createClasses, getClasses } from './utils';
+import { createClasses, getClasses } from './utils';
+
+const variants = {
+  outlined: 'outlined',
+  text: 'text',
+  inverted: 'inverted',
+  contained: 'contained',
+};
+
+const sizes = {
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+};
 
 const variantClasses = [
   createClasses(variants.outlined, 'text-purple-500 bg-gray-100 border-2 border-purple-500'),
