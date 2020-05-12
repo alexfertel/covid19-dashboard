@@ -8,6 +8,11 @@ const Header = () => (
         Components
       </Link>
     </div>
+    <div className="flex justify-between">
+      <Link to="/info" className="text-gray-600">
+        Info
+      </Link>
+    </div>
   </header>
 );
 
