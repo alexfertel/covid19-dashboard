@@ -1,53 +1,52 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { createClasses, getClasses } from './utils';
+import { createMatcher } from './utils';
 
-const variants = {
-  outlined: 'outlined',
-  text: 'text',
-  inverted: 'inverted',
-  contained: 'contained',
-};
-
-const sizes = {
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-};
+const variants = ['outlined', 'text', 'inverted', 'contained'];
+const sizes = ['small', 'medium', 'large'];
 
 const variantClasses = [
-  createClasses(variants.outlined, 'text-purple-500 bg-gray-100 border-2 border-purple-500'),
-  createClasses(variants.text, 'text-purple-500'),
-  createClasses(variants.inverted, 'text-purple-600 bg-purple-200'),
+  'text-purple-500 bg-gray-100 border-2 border-purple-500', // outlined
+  'text-purple-500', // text
+  'text-purple-600 bg-purple-200', // inverted
+  'text-gray-100 bg-purple-600', // contained
 ];
-const defaultVariantClass = 'text-gray-100 bg-purple-600';
-
-const getVariantClasses = variant => getClasses(variant, variantClasses, defaultVariantClass);
 
 const hoverClasses = [
-  createClasses(variants.outlined, 'hover:text-gray-100 hover:bg-purple-500 hover:border-transparent'),
-  createClasses(variants.text, 'hover:bg-purple-100 hover:text-purple-600'),
-  createClasses(variants.inverted, 'hover:bg-purple-100'),
+  'hover:text-gray-100 hover:bg-purple-500 hover:border-transparent', // outline
+  'hover:bg-purple-100 hover:text-purple-600', // text
+  'hover:bg-purple-100', // inverted
+  'hover:bg-purple-400', // contained
 ];
-const defaultVariantHover = 'hover:bg-purple-400';
 
-const getHoverClasses = variant => getClasses(variant, hoverClasses, defaultVariantHover);
+const sizeClasses = ['px-3 py-2', 'px-4 py-3', 'px-5 py-4'];
+const baseClasses =
+  'rounded-2xl inline-block items-center justify-between font-semibold focus:outline-none focus:shadow-outline';
 
-const sizesClasses = [createClasses(sizes.small, 'px-3 py-2'), createClasses(sizes.small, 'px-5 py-4')];
+const getVariantClasses = createMatcher(variants, variantClasses);
+const getHoverClasses = createMatcher(variants, hoverClasses);
+const getSizeClasses = createMatcher(sizes, sizeClasses);
 
-const defaultSizeClasses = 'px-4 py-3';
+const Button = ({
+  children,
+  variant = 'contained',
+  size = 'medium',
+  onClick = () => {},
+  type = 'button',
+  classes = '',
+  className = ''
+}) => {
+  const computedClasses = [
+    baseClasses,
+    getVariantClasses(variant),
+    getSizeClasses(size),
+    getHoverClasses(variant),
+  ].join(' ');
 
-const getSizeClasses = size => getClasses(size, sizesClasses, defaultSizeClasses);
-
-const Button = props => {
-  const { variant = 'contained', size = 'medium', children, onClick = () => {}, type = 'button', classes = '' } = props;
-  const baseClasses =
-    'rounded-2xl inline-block items-center justify-between font-semibold focus:outline-none focus:shadow-outline';
-
-  const className =
-    classes || [baseClasses, getVariantClasses(variant), getSizeClasses(size), getHoverClasses(variant)].join(' ');
+  const formalClasses = [classes, computedClasses].join(' ');
+  const appliedClasses = className || formalClasses;
   return (
-    <button className={className} onClick={onClick} type={type}>
+    <button className={appliedClasses} onClick={onClick} type={type}>
       {children}
     </button>
   );
