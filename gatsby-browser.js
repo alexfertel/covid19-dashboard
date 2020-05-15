@@ -1,5 +1,5 @@
 import 'typeface-quicksand';
-import 'typeface-nunito';
+import 'typeface-montserrat';
 import './src/css/tailwind.css';
 import Provider from './src/global/Provider';
 

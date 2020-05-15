@@ -6,11 +6,11 @@ import SideBar from './Sidebar';
 
 const Layout = ({ children }) => (
   <div className="relative min-h-screen bg-gray-200">
-    <div className="absolute inset-0 flex mx-8 my-10 antialiased rounded-2xl">
+    <div className="absolute inset-0 flex mx-8 my-10 antialiased shadow-lg rounded-2xl">
       <nav className="w-112">
         <SideBar />
       </nav>
-      <main className="w-full -ml-8 overflow-hidden bg-gray-100 shadow-lg rounded-2xl">
+      <main className="w-full -ml-8 overflow-hidden bg-white rounded-2xl">
         <Header />
         {children}
       </main>

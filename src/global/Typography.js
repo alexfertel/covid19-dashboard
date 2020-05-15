@@ -13,7 +13,7 @@ const regularClasses = [
   'text-md leading-normal font-semibold',
   'text-sm leading-tight font-semibold',
   'text-md font-thin leading-loose font-semibold',
-].map(cls => `${cls} font-nunito`);
+].map(cls => `${cls} font-montserrat`);
 
 const getHeadingClasses = createMatcher(headings, headingClasses);
 const getRegularClasses = createMatcher(regular, regularClasses);
