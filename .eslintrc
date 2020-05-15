@@ -9,7 +9,6 @@
   "plugins": ["react", "prettier"],
   "env": { "browser": true, "jest": true },
   "rules": {
-    "no-plusplus": 0,
     "no-unused-vars": "warn",
     "max-len": [
       "error",
@@ -24,6 +23,8 @@
     "import/prefer-default-export": 0,
     "react/prop-types": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/state-in-constructor": 0
+    "react/state-in-constructor": 0,
+    "react/jsx-props-no-spreading": "off",
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
   }
 }
