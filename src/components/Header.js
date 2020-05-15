@@ -9,6 +9,11 @@ const Header = () => (
       </Link>
     </div>
     <div className="flex justify-between">
+      <Link to="/gis" className="text-gray-600">
+        Gis
+      </Link>
+    </div>
+    <div className="flex justify-between">
       <Link to="/info" className="text-gray-600">
         Info
       </Link>
