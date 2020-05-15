@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Button from '../global/Button';
 import LineGraph from '../global/LineGraph';
 import Typography from '../global/Typography';
+import Loader from '../global/Loader';
 
 const ComponentsPage = () => {
   return (
@@ -12,6 +13,7 @@ const ComponentsPage = () => {
         <ButtonSection />
         <GraphSection />
         <TypographySection />
+        <LoaderSection />
       </div>
     </Layout>
   );
@@ -82,5 +84,15 @@ const TypographySection = () => {
     </Section>
   );
 };
+
+const LoaderSection = () => (
+  <Section title="Loader">
+    <div className="grid justify-center grid-cols-3 gap-4 pt-10">
+      {[4, 8, 16, 32, 64].map(size => (
+        <Loader size={size} />
+      ))}
+    </div>
+  </Section>
+);
 
 export default ComponentsPage;

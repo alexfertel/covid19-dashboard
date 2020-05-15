@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loader from './Loader';
 
 export const storageContext = React.createContext();
 
@@ -36,7 +37,7 @@ const Provider = ({ children }) => {
     setIsLoading(false);
   }, [data]);
 
-  return isLoading ? <div>Loading</div> : <storageContext.Provider value={data}>{children}</storageContext.Provider>;
+  return isLoading ? <Loader /> : <storageContext.Provider value={data}>{children}</storageContext.Provider>;
 };
 
 export default ({ element }) => <Provider>{element}</Provider>;
