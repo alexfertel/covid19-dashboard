@@ -18,6 +18,32 @@ module.exports = {
       black: '#000',
       white: '#fff',
 
+
+      gray: {
+        1: '#c2cde1',
+        2: '#b7b7c9',
+        3: '#667092',
+        4: '#25233a'
+      },
+
+      red: {
+        1: '#d38188',
+        2: '#cc1e2b',
+        3: '#93030e',
+      },
+
+      blue: {
+        1: '#9ec1e4',
+        2: '#4b8fd5',
+        3: '#033b75'
+      },
+
+      yellow: {
+        1: '#ffd899',
+        2: '#eea835',
+        3: '#ff9f00'
+      },
+
       aqua: {
         900: '#003451',
         800: '#005b79',
@@ -63,28 +89,28 @@ module.exports = {
         100: '#f7e9ff',
       },
 
-      gray: {
-        100: '#f7fafc',
-        200: '#edf2f7',
-        300: '#e2e8f0',
-        400: '#cbd5e0',
-        500: '#a0aec0',
-        600: '#718096',
-        700: '#4a5568',
-        800: '#2d3748',
-        900: '#1a202c',
-      },
-      red: {
-        100: '#fff5f5',
-        200: '#fed7d7',
-        300: '#feb2b2',
-        400: '#fc8181',
-        500: '#f56565',
-        600: '#e53e3e',
-        700: '#c53030',
-        800: '#9b2c2c',
-        900: '#742a2a',
-      },
+      // gray: {
+      //   100: '#f7fafc',
+      //   200: '#edf2f7',
+      //   300: '#e2e8f0',
+      //   400: '#cbd5e0',
+      //   500: '#a0aec0',
+      //   600: '#718096',
+      //   700: '#4a5568',
+      //   800: '#2d3748',
+      //   900: '#1a202c',
+      // },
+      // red: {
+      //   100: '#fff5f5',
+      //   200: '#fed7d7',
+      //   300: '#feb2b2',
+      //   400: '#fc8181',
+      //   500: '#f56565',
+      //   600: '#e53e3e',
+      //   700: '#c53030',
+      //   800: '#9b2c2c',
+      //   900: '#742a2a',
+      // },
       orange: {
         100: '#fffaf0',
         200: '#feebc8',
@@ -96,17 +122,17 @@ module.exports = {
         800: '#9c4221',
         900: '#7b341e',
       },
-      yellow: {
-        100: '#fffff0',
-        200: '#fefcbf',
-        300: '#faf089',
-        400: '#f6e05e',
-        500: '#ecc94b',
-        600: '#d69e2e',
-        700: '#b7791f',
-        800: '#975a16',
-        900: '#744210',
-      },
+      // yellow: {
+      //   100: '#fffff0',
+      //   200: '#fefcbf',
+      //   300: '#faf089',
+      //   400: '#f6e05e',
+      //   500: '#ecc94b',
+      //   600: '#d69e2e',
+      //   700: '#b7791f',
+      //   800: '#975a16',
+      //   900: '#744210',
+      // },
       green: {
         100: '#f0fff4',
         200: '#c6f6d5',
@@ -129,17 +155,17 @@ module.exports = {
         800: '#285e61',
         900: '#234e52',
       },
-      blue: {
-        100: '#ebf8ff',
-        200: '#bee3f8',
-        300: '#90cdf4',
-        400: '#63b3ed',
-        500: '#4299e1',
-        600: '#3182ce',
-        700: '#2b6cb0',
-        800: '#2c5282',
-        900: '#2a4365',
-      },
+      // blue: {
+      //   100: '#ebf8ff',
+      //   200: '#bee3f8',
+      //   300: '#90cdf4',
+      //   400: '#63b3ed',
+      //   500: '#4299e1',
+      //   600: '#3182ce',
+      //   700: '#2b6cb0',
+      //   800: '#2c5282',
+      //   900: '#2a4365',
+      // },
       indigo: {
         100: '#ebf4ff',
         200: '#c3dafe',
@@ -239,8 +265,8 @@ module.exports = {
       '8': '8px',
     },
     boxShadow: {
-      xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
-      sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      xs: '0 5px 15px 0 rgba(0, 0, 0, 0.16)',
+      sm: '0 10px 15px 0 rgba(0, 0, 0, 0.16)',
       default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
       md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
@@ -299,7 +325,7 @@ module.exports = {
       serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
       quicksand: ['quicksand'],
-      nunito: ['nunito'],
+      montserrat: ['montserrat'],
     },
     fontSize: {
       xs: '0.75rem',
@@ -693,7 +719,7 @@ module.exports = {
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidth: ['responsive'],
-    boxShadow: ['responsive', 'hover', 'focus'],
+    boxShadow: ['responsive', 'hover', 'focus', 'active'],
     boxSizing: ['responsive'],
     cursor: ['responsive'],
     display: ['responsive'],
