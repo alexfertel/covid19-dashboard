@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, navigate } from 'gatsby';
+import { useLocation } from "@reach/router"
 import { LogoIcon, DashboardIcon, GitHubIcon, WorldIcon } from '../global/icons';
 
 const tabs = [
@@ -67,21 +68,35 @@ const TitlesSection = ({ tab }) => {
     <div className="w-full py-5 pl-4 -ml-12 text-white bg-blue-1 rounded-l-2xl">
       <div className="flex items-center pt-1 pl-12">
         <DashboardIcon className="w-4 h-4 stroke-2" />
-        <p className="ml-4 text-sm font-semibold tracking-wide font-quicksand">Dashboard</p>
+        <p className="ml-4 text-sm font-medium tracking-wide font-quicksand">Dashboard</p>
       </div>
     </div>
   );
 };
 
 const computeNavigation = tab => link => navigate(`${tab.path}${link.path}`);
+const computePaths = pathname => pathname.slice(1, pathname.lastIndexOf('/')).split('/')
 
 const SideBar = () => {
+  const { pathname } = useLocation();
   const [tabIndex, setTabIndex] = useState(0);
   const tab = tabs[tabIndex];
-
+  console.log(tab)
   const [linkIndex, setLinkIndex] = useState(0);
   const currentLink = tab.links[linkIndex];
+  
+  useEffect(() => {
+    const [iconPath, linkPath] = computePaths(pathname);
+    console.log(iconPath)
+    console.log(linkPath)
+    if (iconPath && linkPath){
+      const index = tabs.findIndex(t => t.path.slice(1) === iconPath)
+      if (index !== tabIndex) setTabIndex(index)
+      if (linkPath) setLinkIndex(tabs[index].links.findIndex(t => t.path.slice(1) === iconPath))
+    }
+  }, [pathname]);
 
+  
   useEffect(() => {
     computeNavigation(tab);
   }, [tabIndex]);

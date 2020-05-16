@@ -13,10 +13,10 @@ const variantClasses = [
 ];
 
 const hoverClasses = [
-  'hover:text-white hover:bg-blue-3 hover:border-transparent', // outline
-  'hover:bg-blue-1', // text
-  'hover:bg-blue-1', // inverted
-  'hover:bg-blue-2', // contained
+  'hover:shadow-lg hover:text-white hover:bg-blue-3 hover:border-transparent', // outline
+  'hover:shadow-lg hover:bg-blue-1', // text
+  'hover:shadow-lg hover:bg-blue-1', // inverted
+  'hover:shadow-lg hover:bg-blue-2', // contained
 ];
 
 const activeClasses = [
@@ -28,7 +28,7 @@ const activeClasses = [
 
 const sizeClasses = ['px-3 py-2', 'px-4 py-3', 'px-8 py-4'];
 const baseClasses =
-  'font-montserrat shadow-md font-semibold rounded-full inline-block items-center justify-between focus:outline-none focus:shadow-outline';
+  'font-montserrat font-semibold shadow-sm rounded-full inline-block items-center justify-between focus:outline-none focus:shadow-outline transition-shadow transform duration-300 ease-out';
 
 const getVariantClasses = createMatcher(variants, variantClasses);
 const getHoverClasses = createMatcher(variants, hoverClasses);
