@@ -6,7 +6,7 @@ const variants = ['outlined', 'text', 'inverted', 'contained'];
 const sizes = ['small', 'medium', 'large'];
 
 const variantClasses = [
-  'text-blue-3 bg-white border border-blue-3', // outlined
+  'text-blue-3 bg-white border-2 border-blue-3', // outlined
   'text-blue-3 bg-white', // text
   'text-blue-3 bg-blue-2', // inverted
   'text-white bg-blue-3', // contained
@@ -26,9 +26,9 @@ const activeClasses = [
   'active:shadow-xs', // contained
 ];
 
-const sizeClasses = ['px-3 py-2', 'px-4 py-3', 'px-5 py-4'];
+const sizeClasses = ['px-3 py-2', 'px-4 py-3', 'px-8 py-4'];
 const baseClasses =
-  'font-montserrat shadow-sm rounded-full inline-block items-center justify-between focus:outline-none focus:shadow-outline';
+  'font-montserrat shadow-md font-semibold rounded-full inline-block items-center justify-between focus:outline-none focus:shadow-outline';
 
 const getVariantClasses = createMatcher(variants, variantClasses);
 const getHoverClasses = createMatcher(variants, hoverClasses);
