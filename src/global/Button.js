@@ -6,7 +6,7 @@ const variants = ['outlined', 'text', 'inverted', 'contained'];
 const sizes = ['small', 'medium', 'large'];
 
 const variantClasses = [
-  'text-blue-3 bg-white border-2 border-blue-3', // outlined
+  'text-blue-3 bg-white border border-blue-3', // outlined
   'text-blue-3 bg-white', // text
   'text-blue-3 bg-blue-2', // inverted
   'text-white bg-blue-3', // contained
