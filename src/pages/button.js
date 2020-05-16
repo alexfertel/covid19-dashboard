@@ -15,7 +15,7 @@ const ButtonPage = () => {
           <div className="space-x-5 font-montserrat" key={variant}>
             {sizes.map(size => (
               <Button variant={variant} size={size} key={size}>
-                Button text
+                Button
               </Button>
             ))}
           </div>
