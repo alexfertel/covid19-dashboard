@@ -11,8 +11,8 @@ const info = [
 ];
 
 const DailySection = () => (
-  <Card className="">
-    <div className="flex w-full pt-1 pl-3 pr-2 divide-x divide-gray-2">
+  <Card>
+    <div className="flex w-full pl-3 pr-2 mt-1 divide-x divide-gray-2">
       {info.map(({ title, number, delta }, i) => (
         <div
           key={title}

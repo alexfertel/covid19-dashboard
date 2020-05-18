@@ -14,7 +14,7 @@ const IndexPage = () => (
         <DailySection />
         <CalendarSection />
       </div>
-      <div className="flex w-full">
+      <div className="flex w-full mt-4">
         <CaseDistributionSection />
         <MapSection />
 
