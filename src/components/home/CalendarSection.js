@@ -10,7 +10,7 @@ const CalendarButton = () => (
 );
 
 const CalendarSection = () => (
-  <Card className="ml-4 shadow-none bg-blue-3">
+  <Card className="ml-4 bg-blue-3">
     <div className="flex items-center h-full px-2">
       <CalendarButton />
       <div className="flex items-center pl-5 space-x-3">

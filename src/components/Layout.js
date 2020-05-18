@@ -9,7 +9,7 @@ const Layout = ({ children }) => (
       <nav className="w-112">
         <SideBar />
       </nav>
-      <main className="w-full -ml-8 overflow-hidden bg-white rounded-2xl">
+      <main className="w-full -ml-8 overflow-hidden bg-gray-1 rounded-2xl">
         {children}
       </main>
     </div>

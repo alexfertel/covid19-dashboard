@@ -12,16 +12,16 @@ const info = [
 
 const DailySection = () => (
   <Card>
-    <div className="grid grid-cols-5 pt-1 pl-3 pr-2 divide-x divide-gray-2">
+    <div className="flex w-full pl-3 pr-2 mt-1 divide-x divide-gray-2">
       {info.map(({ title, number, delta }, i) => (
         <div
           key={title}
           className={`${i !== 0 ? 'pl-8' : ''} ${
-            i !== info.length - 1 ? 'pr-16' : ''
+            i !== info.length - 1 ? 'pr-8 w-48' : 'pr-4'
           } font-medium leading-5 font-quicksand`}
         >
-          <p className="text-gray-4">{title}</p>
-          <p className="mt-2 text-3xl text-black">{number}</p>
+          <h2 className="text-gray-4">{title}</h2>
+          <p className="mt-2 text-3xl font-semibold tracking-wide text-black">{number}</p>
           <p className={`mt-2 text-xs ${delta.color}`}>{delta.text}</p>
         </div>
       ))}
