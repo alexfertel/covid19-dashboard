@@ -1,13 +1,17 @@
 import React from 'react';
 
 import SEO from '../components/Seo';
+import DailySection from '../components/home/DailySection';
+import CalendarSection from '../components/home/CalendarSection';
 
 const IndexPage = () => (
   <>
     <SEO title="Dashboard | Home" />
-    <div className="w-full h-64 p-20 text-gray-900">
-      <h3 className="w-full text-5xl font-quicksand">Bienvenido!</h3>
-      <p className="w-full mt-4 text-gray-800 font-montserrat">Esto es un tablero de datos sobre Covid-19.</p>
+    <div className="w-full min-h-full p-8">
+      <div className="flex w-full">
+        <DailySection />
+        <CalendarSection />
+      </div>
     </div>
   </>
 );
