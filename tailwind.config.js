@@ -18,12 +18,12 @@ module.exports = {
       black: '#000',
       white: '#fff',
 
-
       gray: {
-        1: '#c2cde1',
-        2: '#b7b7c9',
-        3: '#667092',
-        4: '#25233a'
+        1: '#f5f5f5',
+        2: '#c2cde1',
+        3: '#b7b7c9',
+        4: '#667092',
+        5: '#25233a',
       },
 
       red: {
@@ -35,13 +35,13 @@ module.exports = {
       blue: {
         1: '#9ec1e4',
         2: '#4b8fd5',
-        3: '#033b75'
+        3: '#033b75',
       },
 
       yellow: {
         1: '#ffd899',
         2: '#eea835',
-        3: '#ff9f00'
+        3: '#ff9f00',
       },
 
       aqua: {
@@ -334,7 +334,7 @@ module.exports = {
       lg: '1.125rem',
       xl: '1.25rem',
       '2xl': '1.5rem',
-      '3xl': '1.875rem',
+      '3xl': '1.75rem',
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',

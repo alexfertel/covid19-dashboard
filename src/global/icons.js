@@ -6,6 +6,16 @@ export const DashboardIcon = ({ className = 'w-5 h-5' }) => (
   </svg>
 );
 
+export const ChevronIcon = ({className = 'w-5 h-5'}) => (
+  <svg viewBox="0 0 12.3 22.6" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className={className}><path d="M11 21L1 11 11 1" /></svg>
+);
+
+export const CalendarIcon = ({className = 'w-5 h-5'}) => (
+  <svg viewBox="0 0 21.3 21.3" className={className} fill="none" stroke="#053d78" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+    <path d="M6 5V1m9 4V1M5 10h11M3 20h15a2 2 0 002-2V5a2 2 0 00-2-2H3a2 2 0 00-2 2v13a2 2 0 002 2z" />
+  </svg>
+);
+
 export const WorldIcon = ({ className = 'w-5 h-5' }) => (
   <svg
     fill="none"
