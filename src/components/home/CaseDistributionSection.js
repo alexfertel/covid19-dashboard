@@ -14,7 +14,7 @@ const VerticalDivider = ({ height = 6, className = '' }) => (
 );
 
 const CaseDistributionSection = () => (
-  <Card className="mt-4">
+  <Card>
     <div className="px-2 pt-1 pb-2">
       <div className="flex w-full">
         <h2 className="font-medium leading-5 font-quicksand text-gray-4">Distribución de casos</h2>

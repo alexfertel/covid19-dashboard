@@ -21,7 +21,13 @@ const IndexPage = () => {
           <MapSection />
         </div>
       </div>
-    </>
-  );
-};
+      <div className="flex w-full mt-4">
+        <CaseDistributionSection />
+        <MapSection />
+
+      </div>
+    </div>
+  </>
+);
+
 export default IndexPage;
