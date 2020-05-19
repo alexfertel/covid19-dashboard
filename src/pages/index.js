@@ -10,7 +10,7 @@ const IndexPage = () => (
   <>
     <SEO title="Dashboard | Home" />
     <div className="w-full min-h-full p-8">
-      <div className="flex w-full">
+      <div className="flex justify-between w-full">
         <DailySection />
         <CalendarSection />
       </div>

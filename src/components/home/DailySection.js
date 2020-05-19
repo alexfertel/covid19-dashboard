@@ -11,13 +11,13 @@ const info = [
 ];
 
 const DailySection = () => (
-  <Card>
-    <div className="flex w-full pl-3 pr-2 mt-1 divide-x divide-gray-2">
+  <Card className="w-full">
+    <div className="flex grid w-full grid-cols-none pl-3 pr-2 mt-1 divide-y xl:divide-y-0 xl:grid-cols-5 xl:divide-x divide-gray-2">
       {info.map(({ title, number, delta }, i) => (
         <div
           key={title}
-          className={`${i !== 0 ? 'pl-8' : ''} ${
-            i !== info.length - 1 ? 'pr-8 w-48' : 'pr-4'
+          className={`${i !== 0 ? 'xl:pl-8' : ''} ${
+            i !== info.length - 1 ? 'pr-8' : 'pr-4'
           } font-medium leading-5 font-quicksand`}
         >
           <h2 className="text-gray-4">{title}</h2>
