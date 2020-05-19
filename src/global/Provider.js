@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
 import Loader from './Loader';
 
@@ -17,17 +18,6 @@ const Provider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    const createDay = (day, diagnosed, date, riskSubjects) => ({
-      day,
-      diagnosed,
-      date,
-      riskSubjects,
-    });
-
-    const createCase = (id, day) => ({ id, day: createDay(id, day.diagnosticados, day.fecha, day.sujetos_riesgo) });
-
-    const getCases = (apiData = {}) => Object.keys(apiData.dias).map(key => createCase(key, apiData.dias[key]));
-
     if (fetchedData) {
       setData({ cases: getCases(fetchedData.casos) });
     }
@@ -41,3 +31,97 @@ const Provider = ({ children }) => {
 };
 
 export default ({ element }) => <Provider>{element}</Provider>;
+
+/* eslint-disable camelcase */
+// #region Parse Data]
+
+const createDiagnostic = (
+  id,
+  country,
+  age,
+  gender,
+  arriveToCuba,
+  medicalConsultation,
+  detectionMunicipality,
+  detectionProvince,
+  dpaCodeDetectionMunicipality,
+  dpaCodeDetectionProvince,
+  contagionType,
+  focalContact,
+  isolationCenter,
+  diagnosticCenter,
+  possibleOriginContagion,
+  info,
+  visitedProvinces,
+  dpaCodeVisitedProvinces
+) => ({
+  id,
+  country,
+  age,
+  gender,
+  arriveToCuba,
+  medicalConsultation,
+  detectionMunicipality,
+  detectionProvince,
+  dpaCodeDetectionMunicipality,
+  dpaCodeDetectionProvince,
+  contagionType,
+  focalContact,
+  isolationCenter,
+  diagnosticCenter,
+  possibleOriginContagion,
+  info,
+  visitedProvinces,
+  dpaCodeVisitedProvinces,
+});
+
+const parseDiagnosedArray = diagnosed =>
+  diagnosed.map(d =>
+    createDiagnostic(
+      d.id,
+      d.pais,
+      d.edad,
+      d.sexo === 'hombre' ? 'male' : 'female',
+      d.arribo_a_cuba_foco,
+      d.consulta_medico,
+      d.municipio_detección,
+      d.provincia_detección,
+      d.dpacode_municipio_deteccion,
+      d.dpacode_provincia_deteccion,
+      d.contagio,
+      d.contacto_focal,
+      d.centro_aislamiento,
+      d.centro_diagnostico,
+      d.posible_procedencia_contagio,
+      d.info,
+      d.provincias_visitadas,
+      d.dpacode_provincias_visitadas
+    )
+  );
+
+const createDay = (day, diagnosed = [], date, riskSubjects = 0, evacuated = 0, deceased = 0, recovered = 0) => ({
+  day,
+  diagnosed: diagnosed ? parseDiagnosedArray(diagnosed) : [],
+  evacuated,
+  deceased,
+  recovered,
+  date,
+  riskSubjects,
+});
+
+const createCase = (id, day) => ({
+  id,
+  day: createDay(
+    id,
+    day.diagnosticados,
+    day.fecha,
+    day.sujetos_riesgo,
+    day.evacuados_numero,
+    day.muertes_numero,
+    day.recuperados_numero
+  ),
+});
+
+const getCases = (apiData = {}) => Object.keys(apiData.dias).map(key => createCase(key, apiData.dias[key]));
+
+// #endregion
