@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import Card from '../Card';
 import { storageContext } from '../../global/Provider';
@@ -18,13 +18,21 @@ const isPositive = [false, false, true, false, true];
 
 const DailySection = () => {
   const { cases } = useContext(storageContext);
-  const latestTotals = Object.values(getAllAccumulatedCases(cases));
-  const latestCases = Object.values(getLatestCases(cases));
-  const info = sections.map((title, i) => ({
-    title,
-    quantity: latestTotals[i],
-    delta: { color: getTextColor(isPositive[i], latestCases[i]), text: getQuantityString(latestCases[i]) },
-  }));
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    if (cases.length > 0) {
+      const latestTotals = Object.values(getAllAccumulatedCases(cases));
+      const latestCases = Object.values(getLatestCases(cases));
+      setInfo(
+        sections.map((title, i) => ({
+          title,
+          quantity: latestTotals[i],
+          delta: { color: getTextColor(isPositive[i], latestCases[i]), text: getQuantityString(latestCases[i]) },
+        }))
+      );
+    }
+  }, [cases]);
 
   return (
     <Card className="w-full">

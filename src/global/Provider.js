@@ -90,7 +90,7 @@ const createCase = (id, day) => ({
 
 const getCases = (apiData = {}) => Object.keys(apiData.dias).map(key => createCase(key, apiData.dias[key]));
 
-export const storageContext = React.createContext();
+export const storageContext = React.createContext({ cases: [] });
 
 const Provider = ({ children }) => {
   const [fetchedData, setFetchedData] = useState(null);
