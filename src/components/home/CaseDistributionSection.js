@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Card from '../Card';
+import VerticalDivider from '../../global/VerticalDivider'
 
 const legend = [
   { title: 'Evacuados', number: 1862, color: 'bg-black' },
@@ -8,10 +9,6 @@ const legend = [
   { title: 'Activos', number: 321, color: 'bg-yellow-3' },
   { title: 'Recuperados', number: 1460, color: 'bg-blue-3' },
 ];
-
-const VerticalDivider = ({ height = 6, className = '' }) => (
-  <div className={`flex flex-col h-${height} border-l border-gray-2 ${className}`} />
-);
 
 const CaseDistributionSection = () => (
   <Card>
@@ -31,7 +28,7 @@ const CaseDistributionSection = () => (
         {legend.map(({ title, color }, i) => (
           <div key={title} className="flex items-center pr-2">
             {i ? <VerticalDivider height={2} className="opacity-75" /> : null}
-            <div className={`rounded-full ml-2 h-1 w-1 ${color}`} />
+            <div className={`rounded-full h-1 w-1 ${i ? 'ml-2 ' : ''}${color}`} />
             <p className="pl-1 text-xs font-medium leading-5 font-quicksand text-gray-4">{title}</p>
           </div>
         ))}
