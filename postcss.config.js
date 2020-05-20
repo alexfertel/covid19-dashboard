@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
-module.exports = () => ({
-  plugins: [require('tailwindcss')],
-});
+module.exports = {
+  plugins: ['tailwindcss', 'postcss-preset-env'],
+}

@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import Link from 'next/link'
 
 const Header = () => (
   <header className="flex justify-between w-full px-5 py-4 text-gray-600 bg-transparent lg:px-8">

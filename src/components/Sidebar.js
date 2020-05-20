@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, navigate } from 'gatsby';
+import Link from 'next/link'
+import Router from 'next/router'
 import { useLocation } from "@reach/router"
 import { LogoIcon, DashboardIcon, GitHubIcon, WorldIcon } from '../global/icons';
 
@@ -74,7 +75,7 @@ const TitlesSection = ({ tab }) => {
   );
 };
 
-const computeNavigation = tab => link => navigate(`${tab.path}${link.path}`);
+const computeNavigation = tab => link => Router.push(`${tab.path}${link.path}`);
 const computePaths = pathname => pathname.slice(1, pathname.lastIndexOf('/')).split('/')
 
 const SideBar = () => {
