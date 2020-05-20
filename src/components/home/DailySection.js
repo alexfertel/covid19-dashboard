@@ -1,47 +1,8 @@
-/* eslint-disable no-use-before-define */
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import Card from '../Card';
-
-const getAllAccumulatedCases = cases =>
-  Object.values(
-    cases.reduce(
-      (accumulator, current) => {
-        const { diagnosed, evacuated, deceased, recovered } = current.day;
-        const newDiagnosed = accumulator.diagnosed + diagnosed.length;
-        const newEvacuated = accumulator.evacuated + evacuated;
-        const newDeceased = accumulator.deceased + deceased;
-        const newRecovered = accumulator.recovered + recovered;
-        const newActiveCases = newDiagnosed - newEvacuated - newDeceased - newRecovered;
-        return {
-          diagnosed: newDiagnosed,
-          activeCases: newActiveCases,
-          deceased: newDeceased,
-          recovered: newRecovered,
-          evacuated: newEvacuated,
-        };
-      },
-      {
-        diagnosed: 0,
-        activeCases: 0,
-        deceased: 0,
-        recovered: 0,
-        evacuated: 0,
-      }
-    )
-  );
-
-const getLastCases = cases => {
-  const latestDay = cases[cases.length - 1].day;
-  const { diagnosed, evacuated, deceased, recovered } = latestDay;
-  return Object.values({
-    latestDiagnosed: diagnosed.length,
-    latestActiveCases: diagnosed.length - evacuated - deceased - recovered,
-    latestDeceased: deceased,
-    latestRecovered: recovered,
-    latestEvacuated: evacuated,
-  });
-};
+import { storageContext } from '../../global/Provider';
+import { getAllAccumulatedCases, getLatestCases } from '../../selectors/daily';
 
 const getTextColor = (isPositiveText, quantity) => {
   if (isPositiveText) {
@@ -55,22 +16,15 @@ const getQuantityString = quantity => `${quantity >= 0 ? '+' : ''}${quantity}`;
 const sections = ['Diagnosticados', 'Activos', 'Recuperados', 'Fallecidos', 'Evacuados'];
 const isPositive = [false, false, true, false, true];
 
-const DailySection = ({ cases = [] }) => {
-  const [info, setInfo] = useState([]);
-
-  useEffect(() => {
-    if (cases && cases.length > 0) {
-      const latestTotals = getAllAccumulatedCases(cases);
-      const latestCases = getLastCases(cases);
-      setInfo(
-        sections.map((title, i) => ({
-          title,
-          quantity: latestTotals[i],
-          delta: { color: getTextColor(isPositive[i], latestCases[i]), text: getQuantityString(latestCases[i]) },
-        }))
-      );
-    }
-  }, [cases]);
+const DailySection = () => {
+  const { cases } = useContext(storageContext);
+  const latestTotals = Object.values(getAllAccumulatedCases(cases));
+  const latestCases = Object.values(getLatestCases(cases));
+  const info = sections.map((title, i) => ({
+    title,
+    quantity: latestTotals[i],
+    delta: { color: getTextColor(isPositive[i], latestCases[i]), text: getQuantityString(latestCases[i]) },
+  }));
 
   return (
     <Card className="w-full">
