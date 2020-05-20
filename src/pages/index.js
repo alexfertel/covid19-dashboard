@@ -5,6 +5,7 @@ import DailySection from '../components/home/DailySection';
 import CalendarSection from '../components/home/CalendarSection';
 import CaseDistributionSection from '../components/home/CaseDistributionSection';
 import MapSection from '../components/home/MapSection';
+import MostAffectedSection from '../components/home/MostAffectedSection';
 
 const IndexPage = () => (
   <>
@@ -17,7 +18,7 @@ const IndexPage = () => (
       <div className="flex w-full mt-4">
         <CaseDistributionSection />
         <MapSection />
-
+        <MostAffectedSection />
       </div>
     </div>
   </>
