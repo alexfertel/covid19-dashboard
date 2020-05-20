@@ -1,39 +1,5 @@
-/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
 import Loader from './Loader';
-
-export const storageContext = React.createContext();
-
-const Provider = ({ children }) => {
-  const [fetchedData, setFetchedData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState({ cases: [] });
-
-  useEffect(() => {
-    fetch(`https://covid19cubadata.github.io/data/covid19-cuba.json?_=1589141816122`)
-      .then(response => response.json())
-      .then(resultData => {
-        setFetchedData(resultData);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (fetchedData) {
-      setData({ cases: getCases(fetchedData.casos) });
-    }
-  }, [fetchedData]);
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, [data]);
-
-  return isLoading ? <Loader /> : <storageContext.Provider value={data}>{children}</storageContext.Provider>;
-};
-
-export default ({ element }) => <Provider>{element}</Provider>;
-
-/* eslint-disable camelcase */
-// #region Parse Data]
 
 const createDiagnostic = (
   id,
@@ -124,4 +90,32 @@ const createCase = (id, day) => ({
 
 const getCases = (apiData = {}) => Object.keys(apiData.dias).map(key => createCase(key, apiData.dias[key]));
 
-// #endregion
+export const storageContext = React.createContext();
+
+const Provider = ({ children }) => {
+  const [fetchedData, setFetchedData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState({ cases: [] });
+
+  useEffect(() => {
+    fetch(`https://covid19cubadata.github.io/data/covid19-cuba.json?_=1589141816122`)
+      .then(response => response.json())
+      .then(resultData => {
+        setFetchedData(resultData);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (fetchedData) {
+      setData({ cases: getCases(fetchedData.casos) });
+    }
+  }, [fetchedData]);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, [data]);
+
+  return isLoading ? <Loader /> : <storageContext.Provider value={data}>{children}</storageContext.Provider>;
+};
+
+export default ({ element }) => <Provider>{element}</Provider>;

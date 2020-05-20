@@ -1,15 +1,12 @@
-/* eslint-disable max-len */
 import React, { useContext } from 'react';
 
 import { storageContext } from '../global/Provider';
-import Resume from '../components/Resume';
 
 const InfoPage = () => {
   const { cases } = useContext(storageContext);
 
   return (
     <div className="w-full h-64 p-20 text-gray-900">
-      <Resume />
       <h3 className="w-full text-5xl font-quicksand">Info</h3>
       <h5 className="w-full text-3xl font-quicksand">Cases</h5>
       <div className="h-64 pb-10 overflow-auto">
