@@ -20,6 +20,7 @@
         "ignoreTemplateLiterals": true
       }
     ],
+    "jsx-a11y/anchor-is-valid": 0,
     "import/no-extraneous-dependencies": ["error", { "devDependencies": ["src/setupTests.js", "**/*.test.{js,jsx}"] }],
     "import/prefer-default-export": 0,
     "react/prop-types": 0,

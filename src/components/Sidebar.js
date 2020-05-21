@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, navigate } from 'gatsby';
-import { useLocation } from "@reach/router"
+import Link from 'next/link';
+import Router, { useRouter } from 'next/router';
 import { LogoIcon, DashboardIcon, GitHubIcon, WorldIcon } from '../global/icons';
 
 const tabs = [
@@ -42,8 +42,10 @@ const IconsSection = ({ tabIndex, setTabIndex }) => {
   return (
     <div className="flex flex-col w-32 bg-white rounded-2xl text-cool-2">
       <div className="flex flex-col items-center h-full px-4 py-4 mr-12 justify-evenly">
-        <Link to="/">
-          <LogoIcon className="w-8 h-8 text-blue-3" />
+        <Link href="/">
+          <a>
+            <LogoIcon className="w-8 h-8 text-blue-3" />
+          </a>
         </Link>
         <div className="flex flex-col items-center justify-center h-full">
           {tabs.map(({ title, icon, path }) => (
@@ -74,37 +76,38 @@ const TitlesSection = ({ tab }) => {
   );
 };
 
-const computeNavigation = tab => link => navigate(`${tab.path}${link.path}`);
-const computePaths = pathname => pathname.slice(1, pathname.lastIndexOf('/')).split('/')
+const computeNavigation = tab => link => Router.push(`${tab.path}${link.path}`);
+const computePaths = pathname => pathname.slice(1, pathname.lastIndexOf('/')).split('/');
 
 const SideBar = () => {
-  const { pathname } = useLocation();
-  const [tabIndex, setTabIndex] = useState(0);
-  const tab = tabs[tabIndex];
-  console.log(tab)
-  const [linkIndex, setLinkIndex] = useState(0);
-  const currentLink = tab.links[linkIndex];
-  
-  useEffect(() => {
-    const [iconPath, linkPath] = computePaths(pathname);
-    console.log(iconPath)
-    console.log(linkPath)
-    if (iconPath && linkPath){
-      const index = tabs.findIndex(t => t.path.slice(1) === iconPath)
-      if (index !== tabIndex) setTabIndex(index)
-      if (linkPath) setLinkIndex(tabs[index].links.findIndex(t => t.path.slice(1) === iconPath))
-    }
-  }, [pathname]);
+  // const { pathname } = useRouter();
+  // const [tabIndex, setTabIndex] = useState(0);
+  // const tab = tabs[tabIndex];
+  // console.log(tab);
+  // const [linkIndex, setLinkIndex] = useState(0);
+  // const currentLink = tab.links[linkIndex];
 
-  
-  useEffect(() => {
-    computeNavigation(tab);
-  }, [tabIndex]);
+  // useEffect(() => {
+  //   const [iconPath, linkPath] = computePaths(pathname);
+  //   console.log(iconPath);
+  //   console.log(linkPath);
+  //   if (iconPath && linkPath) {
+  //     const index = tabs.findIndex(t => t.path.slice(1) === iconPath);
+  //     if (index !== tabIndex) setTabIndex(index);
+  //     if (linkPath) setLinkIndex(tabs[index].links.findIndex(t => t.path.slice(1) === iconPath));
+  //   }
+  // }, [pathname]);
+
+  // useEffect(() => {
+  //   computeNavigation(tab);
+  // }, [tabIndex]);
 
   return (
     <div className="flex h-full">
-      <IconsSection tabIndex={tabIndex} setTabIndex={setTabIndex} />
-      <TitlesSection linkIndex={linkIndex} setLinkIndex={setLinkIndex} />
+      {/* <IconsSection tabIndex={tabIndex} setTabIndex={setTabIndex} />
+      <TitlesSection linkIndex={linkIndex} setLinkIndex={setLinkIndex} /> */}
+      <IconsSection />
+      <TitlesSection />
     </div>
   );
 };

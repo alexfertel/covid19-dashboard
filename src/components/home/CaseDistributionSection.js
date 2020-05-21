@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import Card from '../Card';
 import VerticalDivider from '../../global/VerticalDivider';
-import { storageContext } from '../../global/Provider';
+import CasesContext from '../../global/Provider';
 import { getAllAccumulatedCases } from '../../selectors/daily';
 
 const legend = [
@@ -13,7 +13,7 @@ const legend = [
 ];
 
 const CaseDistributionSection = () => {
-  const { cases } = useContext(storageContext);
+  const { cases } = useContext(CasesContext);
   const latestTotals = getAllAccumulatedCases(cases);
   return (
     <Card>

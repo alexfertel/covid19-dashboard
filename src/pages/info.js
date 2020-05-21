@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import { storageContext } from '../global/Provider';
+import CasesContext from '../global/Provider';
 
 const InfoPage = () => {
-  const { cases } = useContext(storageContext);
+  const { cases } = useContext(CasesContext);
 
   return (
     <div className="w-full h-64 p-20 text-gray-900">
