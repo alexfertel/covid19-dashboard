@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 
 import Card from '../Card';
-import { storageContext } from '../../global/Provider';
+import CasesContext from '../../global/Provider';
 import { getAllAccumulatedCases, getLatestCases } from '../../selectors/daily';
 
 const getTextColor = (isPositiveText, quantity) => {
@@ -17,7 +17,7 @@ const sections = ['Diagnosticados', 'Activos', 'Recuperados', 'Fallecidos', 'Eva
 const isPositive = [false, false, true, false, true];
 
 const DailySection = () => {
-  const { cases } = useContext(storageContext);
+  const { cases } = useContext(CasesContext);
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
