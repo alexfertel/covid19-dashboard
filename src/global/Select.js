@@ -13,7 +13,7 @@ const DropdownCard = ({ children, onItemClick, setPopperElement, styles, attribu
     <>
       <button
         type="button"
-        className="w-full px-3 leading-4 rounded-sm focus:outline-none hover:bg-blue-1 hover:bg-opacity-25"
+        className="w-full px-3 leading-4 bg-white rounded-sm focus:outline-none hover:bg-blue-1 hover:bg-opacity-25"
         onClick={() => onItemClick(child)}
         key={index}
       >

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Loader from './Loader';
+import React from 'react';
 
 const createDiagnostic = (
   id,
@@ -16,7 +15,6 @@ const createDiagnostic = (
   focalContact,
   isolationCenter,
   diagnosticCenter,
-  possibleOriginContagion,
   info,
   visitedProvinces,
   dpaCodeVisitedProvinces
@@ -35,7 +33,6 @@ const createDiagnostic = (
   focalContact,
   isolationCenter,
   diagnosticCenter,
-  possibleOriginContagion,
   info,
   visitedProvinces,
   dpaCodeVisitedProvinces,
@@ -58,7 +55,6 @@ const parseDiagnosedArray = diagnosed =>
       d.contacto_focal,
       d.centro_aislamiento,
       d.centro_diagnostico,
-      d.posible_procedencia_contagio,
       d.info,
       d.provincias_visitadas,
       d.dpacode_provincias_visitadas
@@ -90,32 +86,11 @@ const createCase = (id, day) => ({
 
 const getCases = (apiData = {}) => Object.keys(apiData.dias).map(key => createCase(key, apiData.dias[key]));
 
-export const storageContext = React.createContext({ cases: [] });
 
-const Provider = ({ children }) => {
-  const [fetchedData, setFetchedData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState({ cases: [] });
+export const getData = async () => {
+  const response = await fetch(`https://covid19cubadata.github.io/data/covid19-cuba.json?_=1589141816122`)
+  const data = await response.json();  
+  return { cases: getCases(data.casos) }
+}
 
-  useEffect(() => {
-    fetch(`https://covid19cubadata.github.io/data/covid19-cuba.json?_=1589141816122`)
-      .then(response => response.json())
-      .then(resultData => {
-        setFetchedData(resultData);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (fetchedData) {
-      setData({ cases: getCases(fetchedData.casos) });
-    }
-  }, [fetchedData]);
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, [data]);
-
-  return isLoading ? <Loader /> : <storageContext.Provider value={data}>{children}</storageContext.Provider>;
-};
-
-export default ({ element }) => <Provider>{element}</Provider>;
+export default React.createContext({ cases: [] });
