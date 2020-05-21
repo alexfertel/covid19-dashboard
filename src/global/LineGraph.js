@@ -1,6 +1,11 @@
 import React from 'react';
 import chroma from 'chroma-js';
-import Sketch from './Sketch';
+import dynamic from 'next/dynamic'
+
+const Sketch = dynamic(
+  () => import('./Sketch'),
+  { ssr: false }
+)
 
 const LineGraph = ({
   xs = [0, 100],

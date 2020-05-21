@@ -24,11 +24,8 @@ const IndexPage = ({ cases }) => {
   );
 };
 
-export async function getServerSideProps() {
-  const { cases } = await getData();
-  return {
-    props: { cases },
-  };
-}
+export const getServerSideProps = async () => ({
+  props: await getData(),
+});
 
 export default IndexPage;
