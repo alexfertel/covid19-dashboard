@@ -6,8 +6,8 @@ export const DashboardIcon = ({ className = 'w-5 h-5' }) => (
   </svg>
 );
 
-export const ChevronIcon = ({className = 'w-5 h-5'}) => (
-  <svg viewBox="0 0 12.3 22.6" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className={className}><path d="M11 21L1 11 11 1" /></svg>
+export const ChevronIcon = ({className = 'w-5 h-5', strokeWidth = 2}) => (
+  <svg viewBox="0 0 12.3 22.6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={strokeWidth} className={className}><path d="M11 21L1 11 11 1" /></svg>
 );
 
 export const CalendarIcon = ({className = 'w-5 h-5'}) => (

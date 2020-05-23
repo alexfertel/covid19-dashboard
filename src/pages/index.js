@@ -5,6 +5,7 @@ import CaseDistributionSection from '../components/home/CaseDistributionSection'
 import MapSection from '../components/home/MapSection';
 import MostAffectedSection from '../components/home/MostAffectedSection';
 import CasesContext, { getData } from '../global/Provider';
+import DailyCasesEvolutionSection from '../components/home/DailyCasesEvolutionSection';
 
 const IndexPage = ({ cases }) => {
   return (
@@ -18,6 +19,9 @@ const IndexPage = ({ cases }) => {
           <CaseDistributionSection />
           <MapSection />
           <MostAffectedSection />
+        </div>
+        <div className="flex w-full mt-4">
+          <DailyCasesEvolutionSection />
         </div>
       </div>
     </CasesContext.Provider>

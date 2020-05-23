@@ -58,7 +58,7 @@ export const Select = ({ children }) => {
         ref={setReferenceElement}
         onClick={handleOpenSelect}
       >
-        <ChevronIcon className="w-2 h-2 transform -rotate-90" />
+        <ChevronIcon className="w-2 h-2 text-white transform -rotate-90" />
       </button>
 
       {open && (
