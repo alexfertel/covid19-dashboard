@@ -14,7 +14,7 @@ const CalendarSection = () => (
     <div className="flex items-center h-full px-2">
       <CalendarButton />
       <div className="flex items-center pl-5 space-x-3">
-        <ChevronIcon className="w-5 h-6" />
+        <ChevronIcon className="w-5 h-6 text-white" />
         <div className="flex items-center leading-5 text-white font-quicksand">
           <p className="text-6xl">15</p>
           <span className="pl-1">
@@ -22,7 +22,7 @@ const CalendarSection = () => (
             <p className="mt-1 ml-1 text-sm">2020</p>
           </span>
         </div>
-        <ChevronIcon className="w-5 h-6 transform rotate-180 rotate" />
+        <ChevronIcon className="w-5 h-6 text-white transform rotate-180 rotate" />
       </div>
     </div>
   </Card>

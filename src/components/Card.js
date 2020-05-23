@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Card = ({ children, className = '' }) => <div className={`p-5 bg-white shadow-lg rounded-xl ${className}`}>{children}</div>;
+const Card = ({ children, className = '', shadow = "lg" }) => <div className={`p-5 bg-white rounded-xl ${className} shadow-${shadow}`}>{children}</div>;
 
 export default Card;

@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-
 import Card from '../Card';
 import VerticalDivider from '../../global/VerticalDivider';
 import CasesContext from '../../global/Provider';
 import { getAllAccumulatedCases } from '../../selectors/daily';
 
 const legend = [
-  { title: 'Evacuados', number: 1862, color: 'bg-black' },
-  { title: 'Fallecidos', number: 79, color: 'bg-red-3' },
-  { title: 'Activos', number: 321, color: 'bg-yellow-3' },
-  { title: 'Recuperados', number: 1460, color: 'bg-blue-3' },
+  { title: 'Evacuados', color: 'bg-black' },
+  { title: 'Fallecidos', color: 'bg-red-3' },
+  { title: 'Activos', color: 'bg-yellow-3' },
+  { title: 'Recuperados', color: 'bg-blue-3' },
 ];
 
 const CaseDistributionSection = () => {

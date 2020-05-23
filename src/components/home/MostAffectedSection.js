@@ -36,13 +36,13 @@ const Table = () => (
       </div>
     ))}
     <Button variant="outlined" size="smallest" classes="w-full mt-3">
-      Ver reporte
+      Ver detalles
     </Button>
   </div>
 );
 
 const MostAffectedSection = () => (
-  <Card className="py-4 ml-4 shadow-sm bg-gray-1">
+  <Card className="py-4 ml-4 bg-gray-1" shadow="md">
     <div className="w-full h-full px-3">
       <div className="flex w-full">
         <VerticalDivider height="8" color="red-3" className="my-1" />

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-
 import CasesContext from '../global/Provider';
 
 const InfoPage = () => {

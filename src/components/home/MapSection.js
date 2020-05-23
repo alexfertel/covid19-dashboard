@@ -4,11 +4,6 @@ import { Select, SelectItem } from '../../global/Select';
 import Card from '../Card';
 import VerticalDivider from '../../global/VerticalDivider';
 
-const legend = [
-  { title: 'Eventos de transmisión local activos', color: 'bg-yellow-3' },
-  { title: 'Eventos de transmisión local cerrados', color: 'bg-blue-3' },
-];
-
 const colors = ['gray-4', 'gray-3', 'gray-2', 'red-3', 'red-2', 'red-1'];
 
 const Colors = () =>

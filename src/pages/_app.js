@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/react-in-jsx-scope */
-import '../css/tailwind.css';
 import 'typeface-quicksand';
 import 'typeface-montserrat';
+import '../css/tailwind.css';
 import Layout from '../components/Layout';
 
 const App = ({ Component, pageProps }) => (
