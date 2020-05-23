@@ -1,7 +1,7 @@
 import React from 'react';
 
-const VerticalDivider = ({ height = 6, color = 'gray-2', className = '' }) => (
-  <div className={`flex flex-col h-${height} border-l border-${color} ${className}`} />
+const VerticalDivider = ({ height = 'h-6', color = 'border-gray-2', className = '' }) => (
+  <div className={`flex flex-col ${height} border-l ${color} ${className}`} />
 );
 
 export default VerticalDivider;

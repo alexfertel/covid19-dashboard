@@ -33,7 +33,7 @@ const CaseDistributionSection = () => {
         <div className="flex">
           {legend.map(({ title, color }, i) => (
             <div key={title} className="flex items-center pr-2">
-              {i ? <VerticalDivider height={2} className="opacity-75" /> : null}
+              {i ? <VerticalDivider height="h-2" className="opacity-75" /> : null}
               <div className={`rounded-full h-1 w-1 ${i ? 'ml-2 ' : ''}${color}`} />
               <p className="pl-1 text-xs font-medium leading-5 font-quicksand text-gray-4">{title}</p>
             </div>
