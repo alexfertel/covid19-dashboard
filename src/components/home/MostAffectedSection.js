@@ -42,7 +42,7 @@ const Table = () => (
 );
 
 const MostAffectedSection = () => (
-  <Card className="py-4 ml-4 bg-gray-1" shadow="shadow-md">
+  <Card className="py-4 ml-4 bg-gray-1" shadow="shadow-sm">
     <div className="w-full h-full px-3">
       <div className="flex w-full">
         <VerticalDivider height="8" color="red-3" className="my-1" />
