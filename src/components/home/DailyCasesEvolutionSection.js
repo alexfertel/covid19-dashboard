@@ -14,7 +14,7 @@ const DailyCasesEvolutionSection = () => (
     <div className="px-2 pt-1">
       <div className="flex justify-between w-full">
         <h2 className="font-medium leading-5 font-quicksand text-gray-4">Evolución de casos por día</h2>
-        <div className="flex items-center justify-center px-2 py-1 text-xs font-semibold leading-4 bg-white border border-opacity-50 rounded-md text-blue-3 border-blue-3 font-quicksand">
+        <div className="flex items-center justify-center px-2 py-1 text-xs font-semibold leading-3 bg-white border border-opacity-50 rounded-md text-blue-3 border-blue-3 font-quicksand">
           30.03 - 30.04
           <ChevronIcon className="w-1 h-2 ml-2 transform -rotate-90" strokeWidth={4} />
         </div>
