@@ -10,16 +10,16 @@ export const getAllAccumulatedCases = cases =>
       return {
         diagnosed: newDiagnosed,
         active: newActive,
-        deceased: newDeceased,
         recovered: newRecovered,
+        deceased: newDeceased,
         evacuated: newEvacuated,
       };
     },
     {
       diagnosed: 0,
       active: 0,
-      deceased: 0,
       recovered: 0,
+      deceased: 0,
       evacuated: 0,
     }
   );
@@ -30,8 +30,8 @@ export const getLatestCases = cases => {
   return {
     latestDiagnosed: diagnosed.length,
     latestActive: diagnosed.length - evacuated - deceased - recovered,
-    latestDeceased: deceased,
     latestRecovered: recovered,
+    latestDeceased: deceased,
     latestEvacuated: evacuated,
   };
 };
