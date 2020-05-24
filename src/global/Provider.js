@@ -86,11 +86,10 @@ const createCase = (id, day) => ({
 
 const getCases = (apiData = {}) => Object.keys(apiData.dias).map(key => createCase(key, apiData.dias[key]));
 
-
 export const getData = async () => {
-  const response = await fetch(`https://covid19cubadata.github.io/data/covid19-cuba.json?_=1589141816122`)
-  const data = await response.json();  
-  return { cases: getCases(data.casos) }
-}
+  const response = await fetch(`https://covid19cubadata.github.io/data/covid19-cuba.json`);
+  const data = await response.json();
+  return { cases: getCases(data.casos) };
+};
 
 export default React.createContext({ cases: [] });

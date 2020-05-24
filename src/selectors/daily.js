@@ -1,4 +1,4 @@
-export const getAllAccumulatedCases = cases =>
+const getAllAccumulatedCases = cases =>
   cases.reduce(
     (accumulator, current) => {
       const { diagnosed, evacuated, deceased, recovered } = current.day;
@@ -24,7 +24,7 @@ export const getAllAccumulatedCases = cases =>
     }
   );
 
-export const getLatestCases = cases => {
+const getLatestCases = cases => {
   const latestDay = cases[cases.length - 1].day;
   const { diagnosed, evacuated, deceased, recovered } = latestDay;
   return {
@@ -35,3 +35,7 @@ export const getLatestCases = cases => {
     latestEvacuated: evacuated,
   };
 };
+
+const getLatestDate = cases => new Date(cases[cases.length - 1].day.date);
+
+export { getAllAccumulatedCases, getLatestCases, getLatestDate };
