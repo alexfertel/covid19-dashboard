@@ -13,7 +13,7 @@ const getTextColor = (isPositiveText, quantity) => {
 
 const getQuantityString = quantity => `${quantity >= 0 ? '+' : ''}${quantity}`;
 
-const sections = ['Diagnosticados', 'Activos', 'Recuperados', 'Fallecidos', 'Evacuados'];
+const sections = ['Diagnosticados', 'Activos', 'Fallecidos', 'Recuperados', 'Evacuados'];
 const isPositive = [false, false, true, false, true];
 
 const DailySection = () => {
