@@ -1,5 +1,11 @@
 import React from 'react';
-import LeafletMap from './LeafletMap';
+import dynamic from 'next/dynamic'
+
+const LeafletMap = dynamic(
+  () => import('./LeafletMap'),
+  { ssr: false }
+)
+
 
 const MapContainer = props => <LeafletMap {...props} />;
 
